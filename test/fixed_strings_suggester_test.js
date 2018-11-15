@@ -1,4 +1,4 @@
-import {FixedStringsSuggester} from '../fixed_strings_suggester.js';
+import FixedStringsSuggester from '../fixed_strings_suggester.js';
 var assert = require('assert');
 
 var SOME_STRINGS = ['gold', 'golf', 'google'];
@@ -26,7 +26,7 @@ describe('FixedStringsSuggester', function() {
   describe('#suggest', function() {
     it('should return a promise that resolves', async () => {
       var suggester = new FixedStringsSuggester(SOME_STRINGS);
-      assert.deepEqual([suggest('google')], await suggester.suggestInternal('goo'));
+      assert.deepEqual([suggest('google')], await suggester.suggest('goo'));
     });
   });
 });

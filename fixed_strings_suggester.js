@@ -1,12 +1,14 @@
 // Very simple suggester based on a fixed list of strings.
-export class FixedStringsSuggester {
+export default class FixedStringsSuggester {
   constructor(strings) {
     this.strings = strings;
   }
 
   // Return a promise for a suggestion set.
   suggest(query) {
-    return new Promise().resolve(suggestInternal(query));
+    return new Promise((resolve, reject) => {
+      resolve(this.suggestInternal(query));
+    });
   }
 
   // Return a suggestion set.
