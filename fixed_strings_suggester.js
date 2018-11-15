@@ -15,7 +15,7 @@ export class FixedStringsSuggester {
     var candidates = [];
     for (var string of this.strings) {
       if (string.startsWith(query)) {
-        candidates.push(string);
+        candidates.push({"suggestedQuery": string});
       }
     }
     return candidates;
