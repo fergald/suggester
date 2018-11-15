@@ -12,7 +12,7 @@ export default class SuggestState {
 		return cache.keys;
 	}
 
-	get suggestionsFor(query) {
+	suggestionsFor(query) {
 		return cache.get(query);
 	}
 
