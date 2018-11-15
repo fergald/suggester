@@ -1,9 +1,14 @@
-import SuggestCache from './suggest-cache.js'
+import SuggestCache from './suggest-cache.js';
 
-export class SuggestState {
+export default class SuggestState {
 	constructor(inputElement) {
-		this.cache = SuggestCache();
+		console.log("Make SuggestState");
+		this.cache = new SuggestCache();
 		this.currentQuery = "";
 		this.inputElement = inputElement;
+	}
+
+	addSuggestionSet(query, suggestionSet) {
+		this.cache.put(query, suggestionSet);
 	}
 }

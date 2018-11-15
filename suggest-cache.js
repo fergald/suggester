@@ -1,10 +1,10 @@
-export class SuggestCache {
+export default class SuggestCache {
 	constructor() {
-		cache = {};
+		this.cache = {};
 	}
 
 	get keys() {
-		return this.cache.keys();
+		return Object.keys(this.cache);
 	}
 
 	get(key) {
