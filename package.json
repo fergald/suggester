@@ -3,7 +3,8 @@
   "description": "An autocompleting/suggesting element",
   "main": "suggester-element.js",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "esm": "^3.0.84"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
