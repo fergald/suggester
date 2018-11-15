@@ -4,7 +4,8 @@
   "main": "suggester-element.js",
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
-    "esm": "^3.0.84"
+    "esm": "^3.0.84",
+    "polymer-cli": "^1.9.0"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",

@@ -1,7 +1,4 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-/*import SuggestState from './suggest-state.js';
-import LongestPrefixPicker from './longest-prefix-picker.js';
-*/
 
 /**
  * `suggester-element`
@@ -33,15 +30,3 @@ class SuggesterElement extends PolymerElement {
 }
 
 window.customElements.define('suggester-element', SuggesterElement);
-
-/*
-let el = document.createElement("div");
-let suggestState = new SuggestState(el);
-let longestPrefixPicker = new LongestPrefixPicker(suggestState);
-suggestState.addSuggestionSet("goo", ["good", "google"]);
-console.log("Picking for golf, got " + longestPrefixPicker.pick("golf"));
-suggestState.addSuggestionSet("go", ["gone", "goal"]);
-console.log("Picking for golf, got " + longestPrefixPicker.pick("golf"));
-suggestState.addSuggestionSet("g", ["go", "get"]);
-console.log("Picking for golf, got " + longestPrefixPicker.pick("golf"));
-*/

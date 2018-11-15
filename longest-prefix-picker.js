@@ -7,9 +7,7 @@ export default class LongestPrefixPicker {
 
 	pick(currentQuery) {
 		let longestPrefixQuery = "";
-		console.log(this.suggestState.cache.keys);
-		for (let query of this.suggestState.cache.keys) {
-			console.log("pick " + currentQuery + " iterating over " + query);
+		for (let query of this.suggestState.cachedQueries) {
 			if (currentQuery.startsWith(query)) {
 				if (query.length > longestPrefixQuery.length)
 					longestPrefixQuery = query;

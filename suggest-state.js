@@ -8,6 +8,14 @@ export default class SuggestState {
 		this.inputElement = inputElement;
 	}
 
+	get cachedQueries() {
+		return cache.keys;
+	}
+
+	get suggestionsFor(query) {
+		return cache.get(query);
+	}
+
 	addSuggestionSet(query, suggestionSet) {
 		this.cache.put(query, suggestionSet);
 	}
