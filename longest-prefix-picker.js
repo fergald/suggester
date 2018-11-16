@@ -1,13 +1,13 @@
 import SuggestState from './suggest-state.js';
 
 export default class LongestPrefixPicker {
-	constructor(suggestState) {
-		this.suggestState = suggestState;
+	constructor(cache) {
+		this.cache = cache;
 	}
 
 	pick(currentQuery) {
 		let longestPrefixQuery = "";
-		for (let query of this.suggestState.cachedQueries) {
+		for (let query of this.cache.keys()) {
 			if (currentQuery.startsWith(query)) {
 				if (query.length > longestPrefixQuery.length)
 					longestPrefixQuery = query;

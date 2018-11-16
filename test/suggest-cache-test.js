@@ -11,7 +11,7 @@ describe('SuggestCache', function() {
   		for (let i = 0; i < keys.length; ++i) {
   			cache.put(keys[i], values[i]);
   		}
-  		assert.deepEqual(keys, cache.keys);
+  		assert.deepEqual(keys, cache.keys());
   			for (let i = 0; i < keys.length; ++i) {
   			assert.deepEqual(values[i], cache.get(keys[i]));
   		}

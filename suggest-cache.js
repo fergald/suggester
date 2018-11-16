@@ -3,7 +3,7 @@ export default class SuggestCache {
 		this.cache = {};
 	}
 
-	get keys() {
+	keys() {
 		return Object.keys(this.cache);
 	}
 

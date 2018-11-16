@@ -1,9 +1,8 @@
 import SuggestCache from './suggest-cache.js';
 
 export default class SuggestState {
-	constructor(inputElement, suggester, picker, renderer) {
-		console.log("Make SuggestState");
-		this.cache = new SuggestCache();
+	constructor(cache, inputElement, suggester, picker, renderer) {
+		this.cache = cache;
 		this.currentQuery = "";
 		this.inputElement = inputElement;
     this.suggester = suggester;
@@ -12,24 +11,23 @@ export default class SuggestState {
 	}
 
 	get cachedQueries() {
-		return cache.keys;
+		return this.cache.keys();
 	}
 
 	suggestionsFor(query) {
-		return cache.get(query);
+		return this.cache.get(query);
 	}
 
   newQuery(query) {
     let p = this.suggester.suggest(query);
-    console.log("p=", p);
     p.then((suggestions) => {
-      addSuggestionSet(query, suggestions);
+      this.addSuggestionSet(query, suggestions);
     });
   }
 
 	addSuggestionSet(query, suggestionSet) {
 		this.cache.put(query, suggestionSet);
-    let picked = picker.pick(query);
-    renderer.render(suggestionsFor(picked));
+    let picked = this.picker.pick(query);
+    this.renderer.render(this.suggestionsFor(picked));
 	}
 }
